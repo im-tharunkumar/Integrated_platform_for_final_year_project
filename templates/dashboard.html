@@ -1,0 +1,179 @@
+<title>Dashboard</title>
+<link rel="icon" href="{{ url_for('static',filename='images/logo.ico') }}">
+
+<link href="{{ url_for('static',filename='css/test.css') }}" rel="stylesheet">
+<!-- <link href="{{ url_for('static',filename='css/temp.css') }}" rel="stylesheet"> -->
+<script defer="defer" src="{{ url_for('static',filename='js/test.js') }}"></script>
+<script src="https://kit.fontawesome.com/51706dcb62.js" crossorigin="anonymous"></script>
+
+<nav class="nav">
+  <ul class="nav-content">
+    <li class="nav-list">
+      <a href="{{ url_for('home') }}" class="link-item active">
+        <i class="fa-solid fa-house-chimney-crack"></i>
+        <span class="link-text">Home</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('upload') }}" onclick="delayRedirect(event, '/upload')" class="link-item">
+        <i class="fa-solid fa-upload"></i>
+        <span class="link-text">Upload</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('plaigarism') }}" onclick="delayRedirect(event, '/plaigarism')" class="link-item">
+        <i class="fa-regular fa-file-code"></i>
+        <span class="link-text">plagiarism</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('chatbot') }}" onclick="delayRedirect(event, '/chatbot')" class="link-item">
+        <i class="fa-solid fa-robot"></i>
+        <span class="link-text">CHAT - GPT</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="/" onclick="delayRedirect(event, '/')" class="link-item">
+        <i class="fa-solid fa-lock"></i>
+        <span class="link-text">Logout</span>
+      </a>
+    </li>
+    
+
+    <span class="indicator"></span>
+  </ul>
+</nav>
+
+<div class="grid-container">
+  {% if view=="Linux" %}
+  <style>
+    body{
+      background-image: url(https://wallpapers.com/images/high/funny-official-mascot-tux-linux-desktop-68v6vjigoyh89456.webp);
+      background-size: cover;
+    }
+  </style>
+  {% for d in data %} 
+  <a href={{d[3]}}>
+  <div class="container">
+    <div class="terminal_toolbar">
+        <div class="butt">
+            <button class="btn btn-color"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+        </div>
+        <p class="user">{{ d[0] }}: ~</p>
+        <div class="add_tab">
+            +
+        </div>
+    </div>
+    <div class="terminal_body">
+        <div class="terminal_promt">
+            <span class="terminal_user">{{ d[0] }}@admin:</span>
+            <span class="terminal_location">~</span>
+            <span class="terminal_bling">$</span>
+          <span class="terminal_bling">name : ('{{ d[1] }}')</span>
+
+            <!-- <span class="terminal_cursor"></span> -->
+
+        </div>
+        <div class="terminal_promt">
+          <span class="terminal_user">{{ d[0] }}@admin:</span>
+          <span class="terminal_location">~</span>
+          <span class="terminal_bling">$</span>
+          <span class="terminal_bling">echo dev_in('{{ d[2] }}')</span>
+
+          <!-- <span class="terminal_cursor"></span> -->
+
+      </div>
+      
+    <div class="terminal_promt">
+      <span class="terminal_user">{{ d[0] }}@admin:</span>
+      <span class="terminal_location">~</span>
+      <span class="terminal_bling">$</span>
+      <span class="terminal_bling">echo dev_in('{{ d[4] }}')</span>
+
+      <!-- <span class="terminal_cursor"></span> -->
+
+  </div>
+  <div class="terminal_promt">
+    <span class="terminal_user">{{ d[0] }}@admin:</span>
+    <span class="terminal_location">~</span>
+    <span class="terminal_bling">$</span>
+    <span class="terminal_bling">echo dev_in('{{ d[5] }}')</span>
+
+    <span class="terminal_cursor"></span>
+
+</div>
+
+    </div>
+  </div>
+</a>
+  {% endfor %} 
+  {% endif %} 
+  {% if view=="Developer" %}
+  {% for d in data %} 
+  <style>
+    body{
+      background-image: url(https://c1.wallpaperflare.com/preview/182/936/1023/hacker-silhouette-hack-anonymous.jpg);
+      background-size: cover;
+    }
+  </style>
+  <a href={{d[3]}}>
+
+  <div class="card1">
+    <div class="top">
+        <div class="dots">
+            <div class="dot dot-1"></div>
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+          </div>
+        <p class="g-color">_&gt;</p>
+    </div>
+    <div class="bottom">
+        <p class="code">
+            <span class="red">class</span> <span class="violet">Project:</span><br>
+                <span class="red space-2">def__init__</span><span class="orange">(</span><span class="red">self,Proj,Author,lang,date,time</span><span class="orange">):</span><br>
+                <span class="blue space-4x2">self</span><span class="white">.</span><span class="violet">Proj</span><span class="white">=</span><span class="blue">Proj</span><br>
+                <span class="blue space-4x2">self</span><span class="white">.</span><span class="violet">Author</span><span class="white">=</span><span class="blue">Author</span><br>
+                <span class="blue space-4x2">self</span><span class="white">.</span><span class="violet">lang</span><span class="white">=</span><span class="blue">lang</span><br>
+                <span class="blue space-4x2">self</span><span class="white">.</span><span class="violet">date</span><span class="white">=</span><span class="blue">date</span><br>
+                <span class="blue space-4x2">self</span><span class="white">.</span><span class="violet">time</span><span class="white">=</span><span class="blue">time</span><br>
+            
+            <!-- <br> -->
+            <span class="violet">Project</span><span class="blue">('{{d[1]}},{{d[0]}},{{d[2]}},{{d[5]}},{{d[4]}}')</span>
+        </p>            
+    </div>
+  </div>
+
+  </a>
+  {% endfor %} 
+  {% endif %}
+  {% if view=="Normal" %}
+  <style>
+    body{
+      background-image: url(https://img.freepik.com/free-vector/flat-geometric-background_23-2148957201.jpg?w=1380&t=st=1677245711~exp=1677246311~hmac=64dbec782e4fee2be04172c25d5da036a68dc2449e4587906460d8e75f009d8f);
+    }
+  </style>
+  {% for d in data %} 
+  <a href={{d[3]}}>
+
+  <div class="card">
+    <div class="card__content">
+      <div class="card__date"> {{d[1]}}
+      </div>
+      <div class="card__info">
+        <h2>Name:</h2>
+        <h4>{{d[0]}}</h4>
+        <h2>Developed in :</h2>
+        <h4>{{d[2]}}</h4>
+        <h2>Time :</h2>
+        <h4>{{d[4]}}</h4>
+        <h2>Date :</h2>
+        <h4>{{d[5]}}</h4>
+      </div>
+    </div>
+  </div>
+  </a>
+  {% endfor %} 
+  {% endif %}
+</div>

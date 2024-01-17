@@ -1,0 +1,180 @@
+<link rel="icon" href="{{ url_for('static',filename='images/logo.ico') }}">
+<title>CHAT - GPT</title>
+<link href="{{ url_for('static',filename='css/chatgpt.css') }}" rel="stylesheet">
+<!-- <link href="{{ url_for('static',filename='css/temp.css') }}" rel="stylesheet"> -->
+<script defer="defer" src="{{ url_for('static',filename='js/test.js') }}"></script>
+<script src="https://kit.fontawesome.com/51706dcb62.js" crossorigin="anonymous"></script>
+
+<nav class="nav">
+  <ul class="nav-content">
+    <li class="nav-list">
+      <a href="{{ url_for('home') }}" class="link-item ">
+        <i class="fa-solid fa-house-chimney-crack"></i>
+        <span class="link-text">Home</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('upload') }}" onclick="delayRedirect(event, '/upload')" class="link-item">
+        <i class="fa-solid fa-upload"></i>
+        <span class="link-text">Upload</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('plaigarism') }}" onclick="delayRedirect(event, '/plaigarism')" class="link-item">
+        <i class="fa-regular fa-file-code"></i>
+        <span class="link-text">Plaigarism checker</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('chatbot') }}" onclick="delayRedirect(event, '/chatbot')" class="link-item active">
+        <i class="fa-solid fa-robot"></i>
+        <span class="link-text">CHAT - GPT</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="/" onclick="delayRedirect(event, '/')" class="link-item">
+        <i class="fa-solid fa-lock"></i>
+        <span class="link-text">Logout</span>
+      </a>
+    </li>
+
+    <span class="indicator"></span>
+  </ul>
+</nav>
+   <link href="{{ url_for('static',filename='css/yetri.css') }}" rel="stylesheet">
+
+    
+    <title>CHAT GPT </title>
+    {% if view=="Normal" %}
+    <form method='POST' enctype='multipart/form-data'>
+      <br/>
+     <h1>CUSTOMIZED CHAT GPT FOR THIS APPLICATION</h1>
+     
+     <fieldset>
+      {{form.hidden_tag()}}
+      {{form.textarea.label()}}
+      {{form.textarea()}}
+      
+      
+     
+      {{form.submit()}}
+     
+       
+     <!-- <button type="submit">Sign Up</button> -->
+     
+    </form>
+    <ol class="list-group">
+    
+    <li class="list-group-item">  {{ item }} </li>
+      
+      </ol>
+    {% endif %}
+    {% if view=="Developer" %}
+    <style>
+      h1{
+          font-family: monospace;
+          font-size: 25px;
+          color: #333;
+          background-color: #eee;
+          padding: 10px;
+      }
+      form{
+    background: rgb(255, 255, 255);
+  
+    
+  }
+ 
+      .red{
+        color: red;
+  
+      }
+      .blue{
+        color: blue;
+      }
+      body{
+      background-image: url(https://c1.wallpaperflare.com/preview/182/936/1023/hacker-silhouette-hack-anonymous.jpg);
+      background-size: cover;
+    }
+  </style>
+    <form method='POST' enctype='multipart/form-data'>
+      <br/>
+     <h1><span class="red">print</span>(<span class="blue">"CUSTOMIZED CHAT GPT FOR THIS APPLICATION"</span>)</h1>
+
+     
+     <fieldset>
+      {{form.hidden_tag()}}
+      <!-- {{form.textarea.label()}} -->
+      <h1><span class="red">Query</span>=<span class="blue">input().strip()</span></h1>
+      
+      {{form.textarea()}}
+      
+      
+     
+      {{form.submit()}}
+     
+       
+     <!-- <button type="submit">Sign Up</button> -->
+     
+    </form>
+    <ol class="list-group">
+    
+    <li class="list-group-item">  {{ item }} </li>
+      
+      </ol>
+    {% endif %}
+
+    {% if view=="Linux" %}
+    <form method='POST' enctype='multipart/form-data'>
+      <br/>
+      <style>
+        body{
+      background-image: url(https://wallpapers.com/images/high/funny-official-mascot-tux-linux-desktop-68v6vjigoyh89456.webp);
+      background-size: cover;
+    }
+        h1 {
+  font-family: monospace;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #00ff00;
+  /* background-color: #222; */
+}
+form{
+  background: black;
+
+}
+      </style>
+     <h1>user@admin:~$ echo chatgpt</h1>
+     <h1>user@admin:~$ permision denied</h1>
+     <h1>user@admin:~$ sudo echo chatgpt</h1>
+     <fieldset>
+      {{form.hidden_tag()}}
+      <br><hr>
+      <h1>user@admin:~$ echo Enter your query</h1>
+      <!-- {{form.textarea.label()}} -->
+      {{form.textarea()}}
+      
+      
+     
+      {{form.submit()}}
+     
+       
+     <!-- <button type="submit">Sign Up</button> -->
+     
+    </form>
+    <ol class="list-group">
+    
+    <li class="list-group-item">  {{ item }} </li>
+      
+      </ol>
+    {% endif %}
+
+    
+    <!-- Optional JavaScript -->
+   <script defer="defer" src="{{ url_for('static',filename='js/navbar.js') }}"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

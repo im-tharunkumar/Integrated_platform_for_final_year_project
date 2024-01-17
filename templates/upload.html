@@ -1,0 +1,229 @@
+
+<link href="{{ url_for('static',filename='css/upload.css') }}" rel="stylesheet">
+<!-- <link href="{{ url_for('static',filename='css/temp.css') }}" rel="stylesheet"> -->
+<script defer="defer" src="{{ url_for('static',filename='js/test.js') }}"></script>
+<script src="https://kit.fontawesome.com/51706dcb62.js" crossorigin="anonymous"></script>
+
+<nav class="nav">
+  <ul class="nav-content">
+    <li class="nav-list">
+      <a href="{{ url_for('home') }}" class="link-item ">
+        <i class="fa-solid fa-house-chimney-crack"></i>
+        <span class="link-text">Home</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('upload') }}" onclick="delayRedirect(event, '/upload')" class="link-item active">
+        <i class="fa-solid fa-upload"></i>
+        <span class="link-text">Upload</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('plaigarism') }}" onclick="delayRedirect(event, '/plaigarism')" class="link-item">
+        <i class="fa-regular fa-file-code"></i>
+        <span class="link-text">plagiarism</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('chatbot') }}" onclick="delayRedirect(event, '/chatbot')" class="link-item">
+        <i class="fa-solid fa-robot"></i>
+        <span class="link-text">CHAT - GPT</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="/" onclick="delayRedirect(event, '/')"class="link-item">
+        <i class="fa-solid fa-lock"></i>
+        <span class="link-text">Logout</span>
+      </a>
+    </li>
+
+    <span class="indicator"></span>
+  </ul>
+</nav>
+      <link href="{{ url_for('static',filename='css/yetri.css') }}" rel="stylesheet">
+      
+      <title>Upload</title>
+
+   
+      <html>
+    
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/yetri.css') }}">
+    
+    
+      <br/>
+      <br/>
+      <br/>
+      {% if view=="Linux" %}
+      <style>
+        h1 {
+  font-family: monospace;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #00ff00;
+  /* background-color: #222; */
+}
+body{
+      background-image: url(https://wallpapers.com/images/high/funny-official-mascot-tux-linux-desktop-68v6vjigoyh89456.webp);
+      background-size: cover;
+    }
+form{
+  background: black;
+
+}
+      </style>
+      <form method='POST' enctype='multipart/form-data' onsubmit="showLoadingCursor()">
+         <br/>
+        <h1>user@admin:~$ echo Add Your Project </h1>
+        
+        <fieldset>
+         {{form.hidden_tag()}}
+        <h1>user@admin:~$ echo Project name </h1>
+
+         <!-- {{form.Project_Name.label()}} -->
+         {{form.Project_Name()}}
+         <!-- {{form.Author_Name.label()}} -->
+        <h1>user@admin:~$ echo Author name </h1>
+
+         {{form.Author_Name()}}
+         <!-- {{form.Language.label()}} -->
+        <h1>user@admin:~$ echo Language used </h1>
+
+         {{form.Language()}}
+         
+         {{form.file()}}
+
+         <br/><br/>
+        
+         {{form.submit()}}
+        
+          
+        <!-- <button type="submit">Sign Up</button> -->
+        
+       </form>
+        {% endif %} 
+        {% if view=="Normal" %}
+      <form method='POST' enctype='multipart/form-data' onsubmit="showLoadingCursor()">
+         <br/>
+        <h1> Add Your Project </h1>
+        
+        <fieldset>
+         {{form.hidden_tag()}}
+         {{form.Project_Name.label()}}
+         {{form.Project_Name()}}
+         {{form.Author_Name.label()}}
+         {{form.Author_Name()}}
+         {{form.Language.label()}}
+         {{form.Language()}}
+         
+         {{form.file()}}
+
+         <br/><br/>
+        
+         {{form.submit()}}
+        
+          
+        <!-- <button type="submit">Sign Up</button> -->
+        
+       </form>
+        {% endif %} 
+        {% if view=="Developer" %}
+<style>
+    h1{
+        font-family: monospace;
+        font-size: 25px;
+        color: #333;
+        background-color: #eee;
+        padding: 10px;
+    }
+    body{
+      background-image: url(https://c1.wallpaperflare.com/preview/182/936/1023/hacker-silhouette-hack-anonymous.jpg);
+      background-size: cover;
+    }
+    form{
+  background: rgb(255, 255, 255);
+
+}
+    .red{
+      color: red;
+
+    }
+    .blue{
+      color: blue;
+    }
+</style>
+      <form method='POST' enctype='multipart/form-data' onsubmit="showLoadingCursor()">
+         <br/>
+         <h1><span class="red">print</span>(<span class="blue">"Add your project"</span>)</h1>
+
+        
+        <fieldset>
+         {{form.hidden_tag()}}
+        <h1><span class="red">Project_Name</span>=<span class="blue">input().strip()</span></h1>
+
+         <!-- {{form.Project_Name.label()}} -->
+         {{form.Project_Name()}}
+         <!-- {{form.Author_Name.label()}} -->
+         <h1><span class="red">Author_Name</span>=<span class="blue">input().strip()</span></h1>
+
+
+         {{form.Author_Name()}}
+         <h1><span class="red">Language</span>=<span class="blue">input().strip()</span></h1>
+
+
+         <!-- {{form.Language.label()}} -->
+         {{form.Language()}}
+         
+         {{form.file()}}
+
+         <br/><br/>
+        
+         {{form.submit()}}
+        
+          
+        <!-- <button type="submit">Sign Up</button> -->
+        
+       </form>
+        {% endif %} 
+      
+ 
+<!--       
+      <form method='POST' enctype='multipart/form-data'>
+         {{form.hidden_tag()}}
+         <br/>
+         <div class="form-group">
+         {{form.Project_Name.label(class="form-label")}}
+         {{form.Project_Name(class="form-control")}}
+      </div>
+      <div class="form-group">
+         {{form.Author_Name.label(class="form-label")}}
+         {{form.Author_Name(class="form-control")}}
+      </div>
+      <div class="form-group">
+
+         {{form.file(class="form-control")}}
+      </div>
+      <div class="form-group">
+
+         {{form.submit(class="btn btn-primary")}}
+      </div>
+      
+
+     </form>
+       -->
+       
+        
+         
+      
+      
+      
+
+      
+      <!-- Optional JavaScript -->
+      <script defer="defer" src="{{ url_for('static',filename='js/navbar.js') }}"></script>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   </body>
+</html>

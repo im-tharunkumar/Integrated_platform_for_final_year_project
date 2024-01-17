@@ -1,0 +1,181 @@
+<link rel="icon" href="{{ url_for('static',filename='images/logo.ico') }}">
+<title>plagiarism</title>
+<link href="{{ url_for('static',filename='css/plaigarism.css') }}" rel="stylesheet">
+<!-- <link href="{{ url_for('static',filename='css/temp.css') }}" rel="stylesheet"> -->
+<script defer="defer" src="{{ url_for('static',filename='js/test.js') }}"></script>
+<script src="https://kit.fontawesome.com/51706dcb62.js" crossorigin="anonymous"></script>
+
+<nav class="nav">
+  <ul class="nav-content">
+    <li class="nav-list">
+      <a href="{{ url_for('home') }}" class="link-item ">
+        <i class="fa-solid fa-house-chimney-crack"></i>
+        <span class="link-text">Home</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('upload') }}" onclick="delayRedirect(event, '/upload')" class="link-item">
+        <i class="fa-solid fa-upload"></i>
+        <span class="link-text">Upload</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('plaigarism') }}" onclick="delayRedirect(event, '/plaigarism')" class="link-item active">
+        <i class="fa-regular fa-file-code"></i>
+        <span class="link-text ">plagiarism</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="{{ url_for('chatbot') }}" onclick="delayRedirect(event, '/chatbot')" class="link-item">
+        <i class="fa-solid fa-robot"></i>
+        <span class="link-text">CHAT - GPT</span>
+      </a>
+    </li>
+    <li class="nav-list">
+      <a href="/" onclick="delayRedirect(event, '/')"class="link-item">
+        <i class="fa-solid fa-lock"></i>
+        <span class="link-text">Logout</span>
+      </a>
+    </li>
+
+    <span class="indicator"></span>
+  </ul>
+</nav>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/yetri.css') }}">
+
+  
+
+    <title>plagiarism!</title>
+  
+    {% if view=="Normal" %}
+    
+      <form method='POST' enctype='multipart/form-data'>
+        <br/>
+       <h1> plagiarism checker!!!</h1>
+       
+       <fieldset>
+        {{form.hidden_tag()}}
+        {{form.textarea.label()}}
+        {{form.textarea()}}
+        
+        
+       
+        {{form.submit()}}
+       
+         
+       <!-- <button type="submit">Sign Up</button> -->
+       
+      </form>
+      
+        <ul class="animated-list">
+        {% for item in data %}
+            <li> <a href="{{ item }}"> {{ item }}</a></li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+      {% if view=="Developer" %}
+      <style>
+        h1{
+            font-family: monospace;
+            font-size: 25px;
+            color: #333;
+            background-color: #eee;
+            padding: 10px;
+        }
+        form{
+      background: rgb(255, 255, 255);
+    
+    }
+        .red{
+          color: red;
+    
+        }
+        .blue{
+          color: blue;
+        }
+        body{
+      background-image: url(https://c1.wallpaperflare.com/preview/182/936/1023/hacker-silhouette-hack-anonymous.jpg);
+      background-size: cover;
+    }
+    </style>
+    
+      <form method='POST' enctype='multipart/form-data'>
+        <br/>
+       <h1><span class="red">print</span>(<span class="blue">"plagiarism checker!!"</span>)</h1>
+
+       
+       <fieldset>
+        {{form.hidden_tag()}}
+        <!-- {{form.textarea.label()}} -->
+        <h1><span class="red">String</span>=<span class="blue">input().strip()</span></h1>
+
+        {{form.textarea()}}
+        
+        
+       
+        {{form.submit()}}
+       
+         
+       <!-- <button type="submit">Sign Up</button> -->
+       
+      </form>
+      
+        <ul class="animated-list">
+        {% for item in data %}
+            <li> <a href="{{ item }}"> {{ item }}</a></li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+      {% if view=="Linux" %}
+      <style>
+        h1 {
+  font-family: monospace;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #00ff00;
+  /* background-color: #222; */
+}
+body{
+      background-image: url(https://wallpapers.com/images/high/funny-official-mascot-tux-linux-desktop-68v6vjigoyh89456.webp);
+      background-size: cover;
+    }
+form{
+  background: black;
+
+}
+      </style>
+    
+      <form method='POST' enctype='multipart/form-data'>
+        <br/>
+       <h1> user@admin:~$ echo plag checker!!!</h1>
+       
+       <fieldset>
+        {{form.hidden_tag()}}
+        <!-- {{form.textarea.label()}} -->
+        <hr>
+       <h1> user@admin:~$ echo Enter the text you want to check for plaigarism :</h1>
+<br>
+        {{form.textarea()}}
+        
+        
+       
+        {{form.submit()}}
+       
+         
+       <!-- <button type="submit">Sign Up</button> -->
+       
+      </form>
+      
+        <ul class="animated-list">
+        {% for item in data %}
+            <li> <a href="{{ item }}"> {{ item }}</a></li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    <!-- Optional JavaScript -->
+    <script defer="defer" src="{{ url_for('static',filename='js/plaigarism.js') }}"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+  </body>
+</html>
